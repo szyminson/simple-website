@@ -28,6 +28,8 @@ class pages
             $this->modules[$this->count]->add($module);
         }
 
+        $this->count++;
+
     }
 
     public function showModules($id){
