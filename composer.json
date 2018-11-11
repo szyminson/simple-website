@@ -1,0 +1,13 @@
+{
+    "name": "szyminson/simple-website",
+    "type": "project",
+    "require": {
+        "eftec/bladeone": "^3.17"
+    },
+    "authors": [
+        {
+            "name": "szyminson",
+            "email": "szyminson@hotmail.com"
+        }
+    ]
+}
