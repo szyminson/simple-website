@@ -2,7 +2,8 @@
     "name": "szyminson/simple-website",
     "type": "project",
     "require": {
-        "eftec/bladeone": "^3.17"
+        "eftec/bladeone": "^3.17",
+        "vlucas/phpdotenv": "^2.5"
     },
     "authors": [
         {
