@@ -1,5 +1,5 @@
 /test*.php
-/config/mainConfig.php
 /vendor/
 /.idea/
 /.vscode/
+/.env
