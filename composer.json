@@ -10,5 +10,8 @@
             "name": "szyminson",
             "email": "szyminson@hotmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {"SimpleWebsite\\": "classes/"}
+    }
 }

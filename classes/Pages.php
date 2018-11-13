@@ -1,11 +1,12 @@
 <?php
-require_once('modulesClass.php');
+
 /*
     This class handles a list of existing pages (defined in []) with all needed metadata
     such as modules for each page, url name, page's title, filename, etc.
 */
+namespace SimpleWebsite;
 
-class pages
+class Pages
 {
     private $id = array();
     private $name = array();
@@ -26,7 +27,7 @@ class pages
         $this->urlName[$this->count] = $urlName;
         $this->menuVisible[$this->count] = $menuVisible;
 
-        $this->modules[$this->count] = new modules;
+        $this->modules[$this->count] = new Modules;
 
         if(is_array($modules)){    
             foreach($modules as $module){

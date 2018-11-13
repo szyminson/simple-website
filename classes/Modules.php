@@ -3,7 +3,9 @@
     This class handles a list of modules and modules loading from the list.
 */
 
-class modules
+namespace SimpleWebsite;
+
+class Modules
 {
     private $id = array();
     private $name = array();
