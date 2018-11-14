@@ -57,11 +57,15 @@ class Modules
     /*
         Includes all modules from the list into an app code.
     */
-    public function loadAll(){
+    public function loadAll($pageId){
 
-        if($this->count<2) include($_ENV['MODULES_PATH'].$this->name[0].'.php');
+        if($this->count<2){
+            global $pages;
+            include($_ENV['MODULES_PATH'].$this->name[0].'.php');
+        } 
         else{    
             foreach($this->name as $value){
+                global $pages, $blade;
                 include($_ENV['MODULES_PATH'].$value.'.php');
             }
         }

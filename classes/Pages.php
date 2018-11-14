@@ -48,11 +48,15 @@ class Pages
         $this->modules[$id]->list();
     }
 
+    public function getUrlName($id){
+        return $this->urlName[$id];
+    }
+
     /*
         Load page's modules
     */
     public function load($id){
-        $this->modules[$id]->loadAll();
+        $this->modules[$id]->loadAll($id);
     }
 
 }
