@@ -18,7 +18,6 @@ class Modules
         
         $this->id[$this->count] = $this->count;
         $this->name[$this->count] = $name;
-
         $this->count++;
 
     }
@@ -41,7 +40,7 @@ class Modules
         Includes a module into an app code.
     */
     public function load($id){
-        include(MODULES_PATH.$this->name[$id]);
+        include($_ENV['MODULES_PATH'].$this->name[$id]);
     }
 
     /*
@@ -60,8 +59,11 @@ class Modules
     */
     public function loadAll(){
 
-        foreach($this->name as $value){
-            include(MODULES_PATH.$value);
+        if($this->count<2) include($_ENV['MODULES_PATH'].$this->name[0].'.php');
+        else{    
+            foreach($this->name as $value){
+                include($_ENV['MODULES_PATH'].$value.'.php');
+            }
         }
 
     }

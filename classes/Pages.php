@@ -48,6 +48,13 @@ class Pages
         $this->modules[$id]->list();
     }
 
+    /*
+        Load page's modules
+    */
+    public function load($id){
+        $this->modules[$id]->loadAll();
+    }
+
 }
 
 ?>

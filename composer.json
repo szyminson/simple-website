@@ -1,6 +1,7 @@
 {
     "name": "szyminson/simple-website",
     "type": "project",
+    "description": "A simple website engine",
     "require": {
         "eftec/bladeone": "^3.17",
         "vlucas/phpdotenv": "^2.5"
