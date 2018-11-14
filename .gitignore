@@ -1,6 +1,5 @@
-/views/test*
-/test*
-/modules/test*
+test*
+*Test.*
 /vendor/
 /.idea/
 /.vscode/
