@@ -12,6 +12,7 @@ class Pages
     private $name = array();
     private $title = array();
     private $urlName = array();
+    private $template = array();
     private $menuVisible = array();
     private $modules = array();
     private $count = 0;
@@ -19,12 +20,13 @@ class Pages
     /*
         Adds a new page to the object.
     */
-    public function add($name, $title, $urlName, $menuVisible = true, $modules){
+    public function add($name, $title, $urlName, $template, $menuVisible = true, $modules){
 
         $this->id[$this->count] = $this->count;
         $this->name[$this->count] = $name;
         $this->title[$this->count] = $title; 
         $this->urlName[$this->count] = $urlName;
+        $this->template[$this->count] = $template;
         $this->menuVisible[$this->count] = $menuVisible;
 
         $this->modules[$this->count] = new Modules;
@@ -48,8 +50,16 @@ class Pages
         $this->modules[$id]->list();
     }
 
+    public function getTitle($id){
+        return $this->title[$id];
+    }
+
     public function getUrlName($id){
         return $this->urlName[$id];
+    }
+
+    public function getTemplate($id){
+        return $this->template[$id];
     }
 
     /*

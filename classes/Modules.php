@@ -58,15 +58,17 @@ class Modules
         Includes all modules from the list into an app code.
     */
     public function loadAll($pageId){
-
+        global $pages, $blade;
         if($this->count<2){
-            global $pages;
-            include($_ENV['MODULES_PATH'].$this->name[0].'.php');
+            $file = $_ENV['MODULES_PATH'].$this->name[0].'.php';
+            if(file_exists($file)) include($file);
+            else echo $blade->run("modules.".$this->name[0],array());
         } 
         else{    
             foreach($this->name as $value){
-                global $pages, $blade;
-                include($_ENV['MODULES_PATH'].$value.'.php');
+                $file = $_ENV['MODULES_PATH'].$value.'.php';
+                if(file_exists($file)) include($file);
+                else echo $blade->run("modules.".$value,array());
             }
         }
 

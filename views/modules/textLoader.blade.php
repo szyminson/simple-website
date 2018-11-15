@@ -1,4 +1,4 @@
-@extends('layouts.testLayout')
-@section('content')
+<div style="background-color: green;">
 {{ $text }}
-@endsection
+</div>
+
