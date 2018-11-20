@@ -50,14 +50,23 @@ class Pages
         $this->modules[$id]->list();
     }
 
+    /*
+        Returns a title of a page with given id
+    */
     public function getTitle($id){
         return $this->title[$id];
     }
 
+    /*
+        Returns an url name of a page with given id.
+    */
     public function getUrlName($id){
         return $this->urlName[$id];
     }
 
+    /*
+        Returns a template name of a page with given id.
+    */
     public function getTemplate($id){
         return $this->template[$id];
     }
