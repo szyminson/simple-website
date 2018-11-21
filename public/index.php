@@ -1,1 +1,1 @@
-test
+some index.php content
