@@ -40,7 +40,7 @@ class Modules
         Includes a module into an app code.
     */
     public function load($id){
-        include($_ENV['MODULES_PATH'].$this->name[$id]);
+        include($_ENV['MODULES_PATH'].'/'.$this->name[$id]);
     }
 
     /*
@@ -60,13 +60,13 @@ class Modules
     public function loadAll($pageId){
         global $pages, $blade;
         if($this->count<2){
-            $file = $_ENV['MODULES_PATH'].$this->name[0].'.php';
+            $file = $_ENV['MODULES_PATH'].'/'.$this->name[0].'.php';
             if(file_exists($file)) include($file);
             else echo $blade->run("modules.".$this->name[0],array());
         } 
         else{    
             foreach($this->name as $value){
-                $file = $_ENV['MODULES_PATH'].$value.'.php';
+                $file = $_ENV['MODULES_PATH'].'/'.$value.'.php';
                 if(file_exists($file)) include($file);
                 else echo $blade->run("modules.".$value,array());
             }
