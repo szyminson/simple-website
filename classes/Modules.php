@@ -10,6 +10,14 @@ class Modules
     private $id = array();
     private $name = array();
     private $count = 0;
+    private $pgref;
+
+    /*
+        A constructor, takes Pages object as a parameter
+    */
+    //public function __construct($pgref){
+
+    //}
 
     /*
         Adds a new module to the list.
@@ -58,19 +66,29 @@ class Modules
         Includes all modules from the list into an app code.
     */
     public function loadAll($pageId){
+       
         global $pages, $blade;
+        
+        $loaded = '';       //  This is where modules' views will be loaded
+        $content = null;    //  Optional additional variable for each module, it can be passed from module's php file to a view
+
         if($this->count<2){
+            
             $file = $_ENV['MODULES_PATH'].'/'.$this->name[0].'.php';
             if(file_exists($file)) include($file);
-            else echo $blade->run("modules.".$this->name[0],array());
-        } 
+             $loaded = $loaded.$blade->run("modules.".$this->name[0],array("content"=>$content));
+        
+            } 
         else{    
+            
             foreach($this->name as $value){
                 $file = $_ENV['MODULES_PATH'].'/'.$value.'.php';
                 if(file_exists($file)) include($file);
-                else echo $blade->run("modules.".$value,array());
+                $loaded = $loaded.$blade->run("modules.".$value,array("content"=>$content));
             }
+        
         }
+        return $loaded;
 
     }
 }

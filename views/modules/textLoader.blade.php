@@ -1,4 +1,4 @@
 <div style="background-color: green;">
-{{ $text }}
+{{ $content }}
 </div>
 

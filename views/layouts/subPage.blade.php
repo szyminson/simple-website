@@ -3,7 +3,7 @@
 {{ $title }}
 @endsection
 @section('content')
-<div style="margin-left: 40px">
-<?php $pages->load($pageId) ?>
+<div style="margin-left: 20px">
+{!! $content !!}
 </div>
 @endsection

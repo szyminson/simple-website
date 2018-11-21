@@ -75,7 +75,12 @@ class Pages
         Load page's modules
     */
     public function load($id){
-        $this->modules[$id]->loadAll($id);
+        global $blade;
+        
+        $title = $this->title[$id];
+        $content = $this->modules[$id]->loadAll($id);
+        
+        echo $blade->run("layouts.subPage",array("title"=>$title,"content"=>$content));
     }
 
 }
