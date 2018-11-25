@@ -17,6 +17,29 @@ class Pages
     private $modules = array();
     private $count = 0;
 
+    public function __construct($path){
+
+        if ($file = fopen($path, "r")) {
+            while(!feof($file)) {
+                $line = fgets($file);
+        
+                $line = str_replace("\r", '', $line);
+                $line = str_replace("\n", '', $line);
+                
+                $parameter = explode("; ", $line);
+                $parameter[4] = ($parameter[4]==='true');
+        
+                $modules = explode(" + ", $parameter[5]);
+        
+                $this->add($parameter[0], $parameter[1], $parameter[2], $parameter[3], $parameter[4], $modules);
+                if($parameter[4])echo $parameter[3];
+                
+            }
+            fclose($file);
+        }
+
+    }
+    
     /*
         Adds a new page to the object.
     */

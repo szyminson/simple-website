@@ -1,5 +1,5 @@
 test*
-*Test.*
+*Test*
 /vendor/
 /.idea/
 /.vscode/
