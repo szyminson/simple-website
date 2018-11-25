@@ -82,6 +82,7 @@ class Modules
         else{    
             
             foreach($this->name as $value){
+                $content = null;
                 $file = $_ENV['MODULES_PATH'].'/'.$value.'.php';
                 if(file_exists($file)) include($file);
                 $loaded = $loaded.$blade->run("modules.".$value,array("content"=>$content));

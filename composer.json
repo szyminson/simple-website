@@ -4,7 +4,8 @@
     "description": "A simple website engine",
     "require": {
         "eftec/bladeone": "^3.17",
-        "vlucas/phpdotenv": "^2.5"
+        "vlucas/phpdotenv": "^2.5",
+        "oomphinc/composer-installers-extender": "^1.1"
     },
     "authors": [
         {
@@ -14,5 +15,17 @@
     ],
     "autoload": {
         "psr-4": {"SimpleWebsite\\": "classes/"}
-    }
+    },
+    "extra": {
+        "installer-types": ["bower-asset", "npm-asset"],
+        "installer-paths": {
+            "public/assets/{$name}/": ["type:bower-asset", "type:npm-asset"]
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
 }
