@@ -1,4 +1,4 @@
-<div style="background-color: green;">
-{{ $content }}
-</div>
+<p class="lead">
+{{ $Content }}
+</p>
 

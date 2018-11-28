@@ -17,7 +17,10 @@ class Pages
     private $modules = array();
     private $count = 0;
 
-    public function __construct($path){
+    /*
+        This constructor reads a subpage list from a file provided as a parameter.
+    */
+    public function __construct($path = null){
 
         if ($file = fopen($path, "r")) {
             while(!feof($file)) {
@@ -27,12 +30,16 @@ class Pages
                 $line = str_replace("\n", '', $line);
                 
                 $parameter = explode("; ", $line);
-                $parameter[4] = ($parameter[4]==='true');
-        
-                $modules = explode(" + ", $parameter[5]);
-        
-                $this->add($parameter[0], $parameter[1], $parameter[2], $parameter[3], $parameter[4], $modules);
-                if($parameter[4])echo $parameter[3];
+                
+                if(count($parameter)==6){
+                
+                    $parameter[4] = ($parameter[4]==='true');
+                    
+                    $modules = explode(" + ", $parameter[5]);
+            
+                    $this->add($parameter[0], $parameter[1], $parameter[2], $parameter[3], $parameter[4], $modules);
+                
+                }
                 
             }
             fclose($file);
@@ -98,12 +105,14 @@ class Pages
         Load page's modules
     */
     public function load($id){
-        global $blade;
+        global $blade, $components;
         
-        $title = $this->title[$id];
-        $content = $this->modules[$id]->loadAll($id);
         
-        echo $blade->run("layouts.subPage",array("title"=>$title,"content"=>$content));
+        $array1 = array("Title"=>$this->title[$id], "Content"=>$this->modules[$id]->loadAsContent($id));
+        $array2 = $components->loadAsArray();
+        $data = array_merge($array1, $array2);
+        
+        echo $blade->run("layouts.subPage",$data);
     }
 
 }

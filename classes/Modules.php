@@ -65,31 +65,65 @@ class Modules
     /*
         Includes all modules from the list into an app code.
     */
-    public function loadAll($pageId){
+    public function loadAsContent($pageId){
        
         global $pages, $blade;
         
         $loaded = '';       //  This is where modules' views will be loaded
-        $content = null;    //  Optional additional variable for each module, it can be passed from module's php file to a view
+        
 
         if($this->count<2){
             
+            $Content = null;
             $file = $_ENV['MODULES_PATH'].'/'.$this->name[0].'.php';
             if(file_exists($file)) include($file);
-             $loaded = $loaded.$blade->run("modules.".$this->name[0],array("content"=>$content));
+             $loaded = $loaded.$blade->run("modules.".$this->name[0],array("Content"=>$Content));
         
             } 
         else{    
             
             foreach($this->name as $value){
-                $content = null;
+                $Content = null;
                 $file = $_ENV['MODULES_PATH'].'/'.$value.'.php';
                 if(file_exists($file)) include($file);
-                $loaded = $loaded.$blade->run("modules.".$value,array("content"=>$content));
+                $loaded = $loaded.$blade->run("modules.".$value,array("Content"=>$Content));
             }
         
         }
         return $loaded;
+
+    }
+
+    /*
+        Loads each module into an array segment
+    */
+    public function loadAsArray(){
+        
+        global $pages, $blade;
+
+        $array = array();
+
+        if($this->count<2){
+            
+            $Content = null;
+            $file = $_ENV['MODULES_PATH'].'/'.$this->name[0].'.php';
+            if(file_exists($file)) include($file);
+             $array[$this->name[0]] = $blade->run("modules.".$this->name[0],array("Content"=>$Content));
+        
+            } 
+        else{    
+            
+            foreach($this->name as $value){
+                $Content = null;
+                $file = $_ENV['MODULES_PATH'].'/'.$value.'.php';
+                if(file_exists($file)) include($file);
+                $array[$value] = $blade->run("modules.".$value,array("Content"=>$Content));
+            }
+        
+        }
+        return $array;
+
+
 
     }
 }
