@@ -33,9 +33,9 @@ class Pages
                 
                 if(count($parameter)==6){
                 
-                    $parameter[4] = ($parameter[4]==='true');
-                    
-                    $modules = explode(" + ", $parameter[5]);
+                    if($parameter[4]==='true') $parameter[4] = true;
+                    else $parameter[4] = false;
+                    $modules = explode(" & ", $parameter[5]);
             
                     $this->add($parameter[0], $parameter[1], $parameter[2], $parameter[3], $parameter[4], $modules);
                 
@@ -72,6 +72,9 @@ class Pages
 
     }
 
+    public function count(){
+        return $this->count;
+    }
 
     /*
         This one's just for testing purposes. Runs the list method from class modules.
@@ -79,6 +82,14 @@ class Pages
     public function showModules($id){
         $this->modules[$id]->list();
     }
+
+
+    /*
+        Returns a name of a page with given id
+    */
+    public function getName($id){
+        return $this->name[$id];
+    } 
 
     /*
         Returns a title of a page with given id
@@ -101,18 +112,36 @@ class Pages
         return $this->template[$id];
     }
 
+    public function getIdByUrl($urlName){
+        
+        $return = 0;
+        
+        for($id = 0; $id < $this->count; $id++){
+            if($urlName == $this->urlName[$id]) $return = $id;
+        }
+        return $return;
+    }
+
+    public function menuVisible($id){
+        return $this->menuVisible[$id];
+    }
+
     /*
-        Load page's modules
+        Loads page with given id
     */
     public function load($id){
         global $blade, $components;
         
         
-        $array1 = array("Title"=>$this->title[$id], "Content"=>$this->modules[$id]->loadAsContent($id));
-        $array2 = $components->loadAsArray();
+        $array1 = array("Title"=>$this->title[$id], "Content"=>$this->modules[$id]->loadAsContent($id)); //loaded content modules
+        $array2 = $components->loadAsArray($id); //loaded layout components
         $data = array_merge($array1, $array2);
         
-        echo $blade->run("layouts.subPage",$data);
+        return $blade->run("layouts.".$this->template[$id],$data);
+    }
+
+    public function run($urlName){
+        return $this->load($this->getIdByUrl($urlName));
     }
 
 }

@@ -1,4 +1,4 @@
-@extends('layouts.ExampleLayout')
+@extends('layouts.MainLayout')
 @section('title')
 {{ $Title }}
 @endsection

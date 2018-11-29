@@ -1,1 +1,1 @@
-<a class="navbar-brand" href="#">Simple Website</a>
+<a class="navbar-brand" href=".">Simple Website</a>

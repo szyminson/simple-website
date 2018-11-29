@@ -1,0 +1,3 @@
+Home; Example Home Page; home; SubLayout; true; PageHeader & TextLoader
+Subpage; Example Subpage; subpage; SubLayout; true; PageHeader & TextLoader
+Hidden; Hidden Subpage; hidden; SubLayout; false; PageHeader & TextLoader

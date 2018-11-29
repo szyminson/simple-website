@@ -1,4 +1,4 @@
 <p class="lead">
-{{ $Content }}
+{!! $Text !!}
 </p>
 

@@ -1,5 +1,5 @@
 <?php
 
-$Content = $pages->getTitle($pageId);
+$Content = array("Title" => $pages->getTitle($pageId));
 
 ?>

@@ -3,19 +3,15 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarResponsive">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home
-          <span class="sr-only">(current)</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Services</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
-      </li>
+      @for($i = 0; $i < $Count; $i++)
+
+        <li class="nav-item{{ $Active[$i] }}">
+          <a class="nav-link" href="/{{ $UrlNames[$i] }}">
+            {{ $Names[$i] }}          
+          </a>
+        </li>
+
+      @endfor
+     
     </ul>
   </div>
