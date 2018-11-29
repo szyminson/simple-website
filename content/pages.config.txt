@@ -1,2 +1,0 @@
-Home; Example Home Page; home; SubPage; true; TextLoader + TestModule
-Subpage; Example Subpage; subpage; SubPage; true; PageHeader + TextLoader
