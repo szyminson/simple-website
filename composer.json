@@ -1,7 +1,10 @@
 {
     "name": "szyminson/simple-website",
     "type": "project",
-    "description": "A simple website engine",
+    "description": "A simple micro-framework for simple websites.",
+    "keywords": ["simple","website", "szyminson", "micro", "framework"],
+    "homepage": "https://github.com/szyminson/simple-website",
+    "license": "MIT",
     "require": {
         "eftec/bladeone": "^3.17",
         "vlucas/phpdotenv": "^2.5",

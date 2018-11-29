@@ -1,6 +1,6 @@
-# simple-website
-This project's goal is to create an easy in implementation and simple website engine with blade theme support and text files based content management. 
+# Simple Website
+This project's goal is to create an easy in implementation and simple micro-framework with blade theme support and text files based content management. 
 
-# Status: pre-alpha
+# Status: first beta released
 The project is in very first stages. More info soon.
 

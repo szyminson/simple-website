@@ -1,1 +1,1 @@
-This subpage is hidden from menu
+This subpage is not shown in the menu
