@@ -3,9 +3,9 @@ This project's goal is to create an easy in implementation and simple micro-fram
 ## Warning
 The project is in it's very first stages, please report all problems you encounter.
 # Dependencies
-- eftec/bladeone
-- vlucas/phpdotenv
-- oomphinc/composer-installers-extender
+- [eftec/bladeone](https://github.com/EFTEC/BladeOne)
+- [vlucas/phpdotenv](https://github.com/vlucas/phpdotenv)
+- [oomphinc/composer-installers-extender](https://github.com/oomphinc/composer-installers-extender)
 
 
 # Installation
@@ -24,9 +24,12 @@ Simple Website uses BladeOne templating engine. There are 3 types of templates:
 - Module's layout - each module has it's own layout so you can easily change a look of the module.
 
 Main and sub layouts are stored in `/views/layouts`. Modules' layouts are stored in `/views/modules`.
+## File naming
+- Main and sub layouts: `/views/layouts/LayoutName.blade.php`
+- Modules' layouts: `/views/modules/ModuleName.blade.php`
 
 #### Note:
-You can use https://asset-packagist.org/ for your front-end dependencies. By default front-end assets will be stored in `/public/assets`.
+You can use [Asset Packagist](https://asset-packagist.org/) for your front-end dependencies. By default front-end assets will be stored in `/public/assets`.
 
 # Modules
 Modules are simple parts which can be used to build your subpage. You can create 2 kinds of modules:
@@ -62,7 +65,7 @@ $Content = array("Example" => $VariableName, "Example2" => $VariableName2, "Item
 </ul>
 ```
 ## Components
-Components are modules that you want to place in your main or sub layout (for example Menu). To use a module as a component you have to put it's name into a components' config file (by default `/public/content/components.config.txt`). Then you can load the component into you layout file by using it's name: ` {{ $Menu }} ` 
+Components are modules that you want to place in your main or sub layout (for example Menu). To use a module as a component you have to put it's name into a components' config file (by default `/public/content/components.config.txt`). Then you can simply load the component into your layout file by using it's name: ` {{ $Menu }} `. 
 
 
 
