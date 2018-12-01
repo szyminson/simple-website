@@ -1,6 +1,6 @@
 # Simple Website
 This project's goal is to create an easy in implementation and simple micro-framework with blade theme support and text files based content management. 
-### Warning
+## Warning
 The project is in it's very first stages, please report all problems you encounter.
 # Dependencies
 - eftec/bladeone
@@ -32,11 +32,38 @@ You can use https://asset-packagist.org/ for your front-end dependencies. By def
 Modules are simple parts which can be used to build your subpage. You can create 2 kinds of modules:
 ## Static Modules
 Just simple modules containting only html code. You can create them by creating a blade template in `/views/modules`.
+### File naming
+`/views/modules/ModuleName.blade.php`
 ## Dynamic Modules 
-In dynamic modules you can use your own php code. For this purpose you have to create a php file in `/modules` as well as a blade template in `/views/modules`.
-## File naming
-- `/modules/ModuleName.php`
-- `/views/modules/ModuleName.blade.php`
+In dynamic modules you can use your own php code. For this purpose you have to create a php file in `/modules` as well as a blade template in `/views/modules`. You can pass data from the backend part of your module to the template by setting a `$Content` array.
+### File naming
+- Backend: `/modules/ModuleName.php`
+- Frontend: `/views/modules/ModuleName.blade.php`
+### Example
+#### ExampleModule.php
+```php
+$VariableName = "Your data";
+$VariableName2 = "Some other data";
+$VariableName3 = array("one", "two", "three");
+$Content = array("Example" => $VariableName, "Example2" => $VariableName2, "Items" => $VariableName3);
+```
+#### ExampleModule.blade.php
+```html
+<p>
+  {{ $Example }}
+</p>
+<p>
+  {{ $Example2 }}
+</p>
+<ul>
+  @foreach($Items as $Item)
+  <li>$Item</li>
+  @endforeach
+</ul>
+```
+## Components
+Components are modules that you want to place in your main or sub layout (for example Menu). To use a module as a component you have to put it's name into a components' config file (by default `/public/content/components.config.txt`). Then you can load the component into you layout file by using it's name: ` {{ $Menu }} ` 
+
 
 
 
