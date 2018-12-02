@@ -35,7 +35,7 @@ Subpage list is stored in `/public/content/pages.config.txt` by default (you can
 
 
 ## Layout
-Simple Website uses BladeOne templating engine. There are 3 types of templates:
+Simple Website uses *BladeOne* templating engine. There are **3 types** of templates:
 - Main Layout - a main part of your website's look, it's used by sublayouts,
 - Sublayout - this is a layout that is used by subpages, it extends main layouts,
 - Module's layout - each module has it's own layout so you can easily change a look of the module.
@@ -49,17 +49,18 @@ Main and sub layouts are stored in `/views/layouts`. Modules' layouts are stored
 You can use [Asset Packagist](https://asset-packagist.org/) for your front-end dependencies. By default front-end assets will be stored in `/public/assets`.
 
 ## Modules
-Modules are simple parts which can be used to build your subpage. You can create 2 kinds of modules:
+Modules are simple parts which can be used to build your subpage. You can create **2 kinds** of modules:
 ### Static Modules
 Just simple modules containting only html code. You can create them by creating a blade template in `/views/modules`.
 #### File naming
 `/views/modules/ModuleName.blade.php`
 ### Dynamic Modules 
-In dynamic modules you can use your own php code. For this purpose you have to create a php file in `/modules` as well as a blade template in `/views/modules`. You can pass data from the backend part of your module to the template by setting a `$Content` array.
+In dynamic modules you can use your **own php code**. For this purpose you have to create a php file in `/modules` as well as a blade template in `/views/modules`. You can pass data from the backend part of your module to the template by setting a `$Content` array.
 #### Variables available in module's backend
 - `$pageId` - it's an id of current subpage,
 - `$pages` - an object containting all info about your subpages,
-- `$blade` - you can optionally load some additional templates into the `$Content` array but it's not recommended.
+- `$blade` - you can optionally load some additional templates into the `$Content` array but it's not recommended,
+- `$parsedown` - you can use this object to parse some markdown into html.
 #### File naming
 - Backend: `/modules/ModuleName.php`
 - Frontend: `/views/modules/ModuleName.blade.php`
@@ -85,7 +86,7 @@ $Content = array("Example" => $VariableName, "Example2" => $VariableName2, "Item
 </ul>
 ```
 ### Components
-Components are modules that you want to place in your main or sub layout (for example Menu). To use a module as a component you have to put it's name into a components' config file (by default `/public/content/components.config.txt`). Then you can simply load the component into your layout file by using it's name: ` {{ $Menu }} `. 
+Components are modules which can be placed in your **main** or **sublayout** ( for example *Menu* ). To use a module as a component you have to put it's name into a components' **config file** ( by default `/public/content/components.config` ). Then you can simply load the component into your layout file by using it's name: ` {{ $Menu }} `. 
 
 
 
