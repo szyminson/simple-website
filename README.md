@@ -2,7 +2,7 @@
 This project's goal is to create an easy in implementation and simple micro-framework with blade theme support and text files based content management. 
 ## Warning
 The project is in it's very first stages, please report all problems you encounter.
-# Dependencies
+## Dependencies
 - [eftec/bladeone](https://github.com/EFTEC/BladeOne)
 - [vlucas/phpdotenv](https://github.com/vlucas/phpdotenv)
 - [oomphinc/composer-installers-extender](https://github.com/oomphinc/composer-installers-extender)
