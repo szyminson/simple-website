@@ -1,4 +1,4 @@
-<p class="lead">
+<div class="lead">
 {!! $Text !!}
-</p>
+</div>
 

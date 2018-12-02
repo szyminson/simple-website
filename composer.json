@@ -8,7 +8,8 @@
     "require": {
         "eftec/bladeone": "^3.17",
         "vlucas/phpdotenv": "^2.5",
-        "oomphinc/composer-installers-extender": "^1.1"
+        "oomphinc/composer-installers-extender": "^1.1",
+        "erusev/parsedown": "^1.7"
     },
     "authors": [
         {

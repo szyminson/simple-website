@@ -82,7 +82,7 @@ class Modules
     */
     public function loadAsContent($pageId){
        
-        global $pages, $blade;
+        global $pages, $blade, $parsedown;
         
         $loaded = '';       //  This is where modules' views will be loaded
         
@@ -114,7 +114,7 @@ class Modules
     */
     public function loadAsArray($pageId){
         
-        global $pages, $blade;
+        global $pages, $blade, $parsedown;
 
         $array = array();
 

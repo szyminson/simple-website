@@ -1,6 +1,6 @@
 # Simple Website
 This project's goal is to create an easy in implementation and simple micro-framework with blade theme support and text files based content management. 
-## Table of content <!-- omit in toc -->
+## Table of contents <!-- omit in toc -->
 - [Simple Website](#simple-website)
 	- [Dependencies](#dependencies)
 	- [Installation](#installation)
@@ -11,6 +11,7 @@ This project's goal is to create an easy in implementation and simple micro-fram
 		- [Static Modules](#static-modules)
 			- [File naming](#file-naming-1)
 		- [Dynamic Modules](#dynamic-modules)
+			- [Variables available in module's backend](#variables-available-in-modules-backend)
 			- [File naming](#file-naming-2)
 			- [ExampleModule.php](#examplemodulephp)
 			- [ExampleModule.blade.php](#examplemodulebladephp)
@@ -21,6 +22,7 @@ This project's goal is to create an easy in implementation and simple micro-fram
 - [eftec/bladeone](https://github.com/EFTEC/BladeOne)
 - [vlucas/phpdotenv](https://github.com/vlucas/phpdotenv)
 - [oomphinc/composer-installers-extender](https://github.com/oomphinc/composer-installers-extender)
+- [erusev/parsedown](https://github.com/erusev/parsedown)
 
 
 ## Installation
@@ -43,7 +45,7 @@ Main and sub layouts are stored in `/views/layouts`. Modules' layouts are stored
 - Main and sub layouts: `/views/layouts/LayoutName.blade.php`
 - Modules' layouts: `/views/modules/ModuleName.blade.php`
 
-##### Note:<!-- omit in toc -->
+##### Note <!-- omit in toc -->
 You can use [Asset Packagist](https://asset-packagist.org/) for your front-end dependencies. By default front-end assets will be stored in `/public/assets`.
 
 ## Modules
@@ -54,6 +56,10 @@ Just simple modules containting only html code. You can create them by creating 
 `/views/modules/ModuleName.blade.php`
 ### Dynamic Modules 
 In dynamic modules you can use your own php code. For this purpose you have to create a php file in `/modules` as well as a blade template in `/views/modules`. You can pass data from the backend part of your module to the template by setting a `$Content` array.
+#### Variables available in module's backend
+- `$pageId` - it's an id of current subpage,
+- `$pages` - an object containting all info about your subpages,
+- `$blade` - you can optionally load some additional templates into the `$Content` array but it's not recommended.
 #### File naming
 - Backend: `/modules/ModuleName.php`
 - Frontend: `/views/modules/ModuleName.blade.php`

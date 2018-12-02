@@ -11,6 +11,8 @@ $dotenv->load();
 $pages = new SimpleWebsite\Pages($_ENV['PAGES_CONFIG']);
 $components = new SimpleWebsite\Modules($_ENV['COMPONENTS_CONFIG']);
 
+$parsedown = new Parsedown;
+
 $views = $_ENV['BASE_DIR'] . '/views';
 $cache = $_ENV['BASE_DIR'] . '/cache';
 $blade = new BladeOne($views,$cache,BladeOne::MODE_AUTO);
