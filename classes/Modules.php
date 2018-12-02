@@ -13,11 +13,26 @@ class Modules
     private $pgref;
 
     /*
-        A constructor, takes Pages object as a parameter
+        This constructor reads a modules list from a file with path provided as a parameter.
     */
-    //public function __construct($pgref){
-
-    //}
+    public function __construct($path = null){
+        if($path != null){
+            if ($file = fopen($path, "r")) {
+                while(!feof($file)) {
+                    $line = fgets($file);
+            
+                    $line = str_replace("\r", '', $line);
+                    $line = str_replace("\n", '', $line);
+                
+                    $this->add($line);
+                    
+                
+                    
+                }
+                fclose($file);
+            }
+        }
+    }
 
     /*
         Adds a new module to the list.

@@ -9,7 +9,8 @@ for($i = 0; $i < $pages->count(); $i++){
     if($pages->menuVisible($i)){
         $active[$count] = '';
         $names[$count] = $pages->getName($i);
-        $urlNames[$count] = $pages->getUrlName($i);
+        if($i == 0) $urlNames[$count] = '';
+        else $urlNames[$count] = $pages->getUrlName($i);
         if($i === $pageId) $active[$count] = ' active';
        
         $count++;

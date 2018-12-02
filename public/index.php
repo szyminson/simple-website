@@ -9,10 +9,7 @@ $dotenv = new Dotenv\Dotenv(__DIR__.'/..');
 $dotenv->load();
 
 $pages = new SimpleWebsite\Pages($_ENV['PAGES_CONFIG']);
-$components = new SimpleWebsite\Modules;
-
-$components->add('Menu');
-$components->add('Logo');
+$components = new SimpleWebsite\Modules($_ENV['COMPONENTS_CONFIG']);
 
 $views = $_ENV['BASE_DIR'] . '/views';
 $cache = $_ENV['BASE_DIR'] . '/cache';
