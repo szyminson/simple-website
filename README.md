@@ -1,6 +1,6 @@
 # Simple Website
 This project's goal is to create an easy in implementation and simple micro-framework with blade theme support and text files based content management. 
-## Table of contents <!-- omit in toc -->
+## Table of Contents <!-- omit in toc -->
 - [Simple Website](#simple-website)
 	- [Dependencies](#dependencies)
 	- [Installation](#installation)
