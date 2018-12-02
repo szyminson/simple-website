@@ -1,7 +1,22 @@
 # Simple Website
 This project's goal is to create an easy in implementation and simple micro-framework with blade theme support and text files based content management. 
-## Warning
-The project is in it's very first stages, please report all problems you encounter.
+# Table of content
+- [Dependencies](#dependencies)
+- [Installation](#installation)
+- [Subpages](#subpages)
+- [Layout](#layout)
+	- [File naming](#file-naming)
+- [Modules](#modules)
+	- [Static Modules](#static-modules)
+		- [File naming](#file-naming-1)
+	- [Dynamic Modules](#dynamic-modules)
+		- [File naming](#file-naming-2)
+		- [Example](#example)
+			- [ExampleModule.php](#examplemodulephp)
+			- [ExampleModule.blade.php](#examplemodulebladephp)
+	- [Components](#components)
+
+
 ## Dependencies
 - [eftec/bladeone](https://github.com/EFTEC/BladeOne)
 - [vlucas/phpdotenv](https://github.com/vlucas/phpdotenv)
