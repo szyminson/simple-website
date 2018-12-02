@@ -31,7 +31,7 @@ This project's goal is to create an easy in implementation and simple micro-fram
 3. Open your project in a browser and you should see an example page.
 
 ## Subpages
-Subpage list is stored in `/public/content/pages.config.txt` by default (you can change it's path in `.env` file). Remember to place subpages in the config file in order you want to see them in menu. First subpage from the file is automatically treated as a home page.
+Subpage list is stored in `/public/content/pages.config` by default (you can change it's path in `.env` file). Remember to place subpages in the config file in order you want to see them in menu. First subpage from the file is automatically treated as a home page.
 
 
 ## Layout
