@@ -36,7 +36,7 @@ Subpage list is stored in `/public/content/pages.config` by default (you can cha
 
 ## Layout
 Simple Website uses *BladeOne* templating engine. There are **3 types** of templates:
-- Main Layout - a main part of your website's look, it's used by sublayouts,
+- Main Layout - a main part of your website's look, it's extended by sublayouts,
 - Sublayout - this is a layout that is used by subpages, it extends main layouts,
 - Module's layout - each module has it's own layout so you can easily change a look of the module.
 
