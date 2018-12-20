@@ -30,6 +30,9 @@ This project's goal is to create an easy in implementation and simple micro-fram
 2. Rename `.env.example` to `.env` and change `BASE_DIR` variable to your projects path,
 3. Open your project in a browser and you should see an example page.
 
+## Warning  <!-- omit in toc -->
+The best way to undarstand how to use Simple Website is to dig through the files while reading an instructions below.
+
 ## Subpages
 Subpage list is stored in `/public/content/pages.config` by default (you can change it's path in `.env` file). Remember to place subpages in the config file in order you want to see them in menu. First subpage from the file is automatically treated as a home page.
 
