@@ -66,10 +66,12 @@ In dynamic modules you can use your **own php code**. For this purpose you have 
 - Frontend: `/views/modules/ModuleName.blade.php`
 #### ExampleModule.php
 ```php
+<?php
 $VariableName = "Your data";
 $VariableName2 = "Some other data";
 $VariableName3 = array("one", "two", "three");
 $Content = array("Example" => $VariableName, "Example2" => $VariableName2, "Items" => $VariableName3);
+?>
 ```
 #### ExampleModule.blade.php
 ```html
