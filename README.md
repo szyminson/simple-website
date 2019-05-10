@@ -30,7 +30,7 @@ This project's goal is to create an easy in implementation and simple micro-enig
 2. Rename `.env.example` to `.env` and change `BASE_DIR` variable to your projects path,
 3. Open your project in a browser and you should see an example page.
 
-## Warning  <!-- omit in toc -->
+## Advice  <!-- omit in toc -->
 The best way to undarstand how to use Simple Website is to dig through the files while reading this README file.
 
 ## Subpages
